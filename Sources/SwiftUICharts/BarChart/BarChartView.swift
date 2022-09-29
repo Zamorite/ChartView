@@ -34,12 +34,12 @@ public struct BarChartView : View {
     var isFullWidth:Bool {
         return self.formSize == ChartForm.large
     }
-    public init(data:ChartData, title: String, legend: String? = nil, style: ChartStyle = Styles.barChartStyleOrangeLight, form: CGSize? = ChartForm.medium, dropShadow: Bool? = true, cornerImage:Image? = Image(systemName: "waveform.path.ecg"), valueSpecifier: String? = "%.1f", animatedToBack: Bool = false){
+    public init(data:ChartData, title: String, legend: String? = nil, style: ChartStyle = Styles.barChartStyleOrangeLight, darkModeStyle: ChartStyle = Styles.barChartStyleOrangeDark, form: CGSize? = ChartForm.medium, dropShadow: Bool? = true, cornerImage:Image? = Image(systemName: "waveform.path.ecg"), valueSpecifier: String? = "%.1f", animatedToBack: Bool = false){
         self.data = data
         self.title = title
         self.legend = legend
         self.style = style
-        self.darkModeStyle = style.darkModeStyle != nil ? style.darkModeStyle! : Styles.barChartStyleOrangeDark
+        self.darkModeStyle = darkModeStyle
         self.formSize = form!
         self.dropShadow = dropShadow!
         self.cornerImage = cornerImage
@@ -158,10 +158,13 @@ public struct BarChartView : View {
 #if DEBUG
 struct ChartView_Previews : PreviewProvider {
     static var previews: some View {
-        BarChartView(data: TestData.values ,
-                     title: "Model 3 sales",
-                     legend: "Quarterly",
-                     valueSpecifier: "%.0f")
+        BarChartView(
+            data: TestData.values ,
+            title: "Model 3 sales",
+            legend: "Quarterly",
+            form: ChartForm.extraLarge,
+            valueSpecifier: "%.0f"
+        )
     }
 }
 #endif
