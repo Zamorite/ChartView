@@ -15,9 +15,9 @@ Pod::Spec.new do |spec|
   #  summary should be tweet-length, and the description more in depth.
   #
 
-  spec.name         = "ChartView"
-  spec.version      = "0.0.2"
-  spec.summary      = "A fork of AppPears's ChartView."
+  spec.name         = "SwiftUICharts"
+  spec.version      = "0.0.3"
+  spec.summary      = "A fork of AppPears's SwiftUICharts."
 
   # This description is used to generate tags and improve search results.
   #   * Think: What does it do? Why did you write it? What is the focus?
@@ -25,7 +25,7 @@ Pod::Spec.new do |spec|
   #   * Write the description between the DESC delimiters below.
   #   * Finally, don't worry about the indent, CocoaPods strips it!
   spec.description  = <<-DESC
-  A fork of AppPears's ChartView.
+  A fork of AppPears's SwiftUICharts.
   Swift package for displaying charts effortlessly.
                    DESC
 
